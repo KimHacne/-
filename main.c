@@ -125,7 +125,7 @@ void game2(void)
                         tmp = str;
 			strcpy(answer,tmp);
 			printf("%s\n",answer);
-			prinntf("answer reading finish\n");
+			printf("answer reading finish\n");
                         fclose(f);
 			break;
                 }
