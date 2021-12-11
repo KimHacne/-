@@ -75,6 +75,7 @@ int main(void)
     sleep(1);
     game1();
 	usleep(1000000);
+	system("python3 makeRandom.py");
 	game2();
 
 //	fnd_call(1111);
@@ -115,7 +116,6 @@ void game2(void)
 	int t;
     char *zero ="0000";
 	FILE *f;
-	system("python3 makeRandom.py");
 	
 	 while(1){
                 if((f=fopen("random.txt","r"))){
