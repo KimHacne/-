@@ -116,13 +116,17 @@ void game2(void)
 	int t;
     char *zero ="0000";
 	FILE *f;
-	
+	char *tmp;
 	 while(1){
                 if((f=fopen("random.txt","r"))){
                         char *str;
+			printf("answer reading\n");
                         str = (char*)malloc(sizeof(char)*100);
                         fgets(str,100,f);
-                        strcpy(answer,str);
+                        tmp = str;
+			strcpy(answer,tmp);
+			printf("%s\n",answer);
+			prinntf("answer reading finish\n");
                         fclose(f);
 			break;
                 }
@@ -382,7 +386,7 @@ void *GetAnswer(){
 				start = 1;
 			}
 			
-			if(!strcmp(tmp[2],"True\n")){
+			if(!strcmp(tmp[2],"true\n")){
 				equal = 1;
 			}
 			strcpy(answer,tmp[1]);
