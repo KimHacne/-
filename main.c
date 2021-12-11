@@ -75,7 +75,6 @@ int main(void)
     sleep(1);
     game1();
 	usleep(1000000);
-	system("python3 makeRandom.py");
 	game2();
 
 //	fnd_call(1111);
