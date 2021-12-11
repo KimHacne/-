@@ -314,7 +314,7 @@ int bridge(void){
         for(int k=2;k>=0;k--){
                 int n1, n2, n3;
                 putRan(&n1, &n2, &n3);
-                //printf("answer : %d\n", n1);
+                printf("answer : %d\n", n1);
                 while(!quit){
                         usleep(400000);
                         read(push_dev, &push_buf, buf_s);
