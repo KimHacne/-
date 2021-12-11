@@ -117,6 +117,8 @@ void game2(void)
 	FILE *f;
 	char *tmp;
 	 while(1){
+		 sleep(1);
+		 
                 if((f=fopen("random.txt","r"))){
                         char *str;
 			printf("answer reading\n");
