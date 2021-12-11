@@ -80,7 +80,7 @@ int main(void)
 //	fnd_call(1111);
 //	dot_call(2);
 //	led_call();
-    usleep(1000000);
+    usleep(10000000);
 	motor_call(0 , 0);
 
 	close_devices();
@@ -135,10 +135,11 @@ void game2(void)
 	t = pthread_create(&thread,NULL,GetAnswer,NULL);
 
     fnd_call(answer);
-    usleep(300000);
+    usleep(700000);
     fnd_call(zero);
 
     while(1){
+	sleep(1);
         if(start == 1){
             if(equal == 1){
                 printf("\n======================\n");
@@ -152,7 +153,7 @@ void game2(void)
                 printf("game 2 failed\n");
                 text_call("     you die        game over   ");
 		close_devices();
-                exit(0);
+                break;
             }
         }
 
@@ -367,6 +368,7 @@ void *GetAnswer(){
 	int tid=pthread_self();
 
 	while(1){
+		sleep(1);
 		if((f=fopen("answer.txt","r"))){
 			printf("game.c -> start reading\n");
 			char *str;
