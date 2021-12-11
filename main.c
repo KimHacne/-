@@ -102,8 +102,7 @@ void game1()
     if(bridge()<0)
         printf("bridge err\n");
 
-    text_call("Game 1 clear");
-    printf("Game 1 clear\n");
+
 
 }
 void game2(void)
@@ -115,8 +114,19 @@ void game2(void)
     pthread_t thread;
 	int t;
     char *zero ="0000";
+	FILE *f;
 	system("python3 makeRandom.py");
-    
+	
+	 while(1){
+                if((f=fopen("random.txt","r"))){
+                        char *str;
+                        str = (char*)malloc(sizeof(char)*100);
+                        fgets(str,100,f);
+                        answer = str;
+                        fclose(f);
+			break;
+                }
+        }
 	t = pthread_create(&thread,NULL,GetAnswer,NULL);
 
     fnd_call(answer);
@@ -314,11 +324,13 @@ int bridge(void){
                                 printf("you die\n");
                                 text_call("you die");
                                 printf("game 1 failed\n");
-                                return 0;
+				close_devices();
+                                exit(0);
                         }
                 }
         }
-
+	text_call("Game 1 clear");
+    	printf("Game 1 clear\n");
         //close(dev);
         return 0;
 }
