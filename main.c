@@ -142,10 +142,11 @@ void game2(void)
                 text_call("You are Winner");
                 led_call();
                 motor_call(1,1);
-
+		break;
             }else{
                 printf("game 2 failed\n");
                 text_call("     you die        game over   ");
+		close_devices();
                 exit(0);
             }
         }
@@ -381,7 +382,7 @@ void *GetAnswer(){
 				start = 1;
 			}
 			
-			if(!strcmp(tmp[2],"true\n")){
+			if(!strcmp(tmp[2],"True\n")){
 				equal = 1;
 			}
 			strcpy(answer,tmp[1]);
