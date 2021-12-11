@@ -191,7 +191,7 @@ void led_call(void)
 
 	char led_data = 0x00;
 	write(led_dev, &led_data ,1);
-	for(int i = 0; i < 0; i++)
+	for(int i = 0; i < 40; i++)
 	{
 		if(i % 2 == 0)
 		{
