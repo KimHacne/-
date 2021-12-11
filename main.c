@@ -52,7 +52,7 @@ void dot_call(int dot_num);
 void text_call(unsigned char* str);
 void led_call(void);
 void motor_call(int onoff , int dir);
-void start(void);
+void go(void);
 void open_devices(void);
 void close_devices(void);
 
@@ -71,7 +71,7 @@ int main(void)
 {
 
 	open_devices();
-	start();
+	go();
     sleep(1);
     game1();
 	usleep(1000000);
@@ -88,7 +88,7 @@ int main(void)
 	return 0;
 }
 //game 시작
-void start(void)
+void go(void)
 {
 	text_call("Welcome to the  3leg nakg game!");
 	led_call();
