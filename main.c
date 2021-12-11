@@ -110,7 +110,7 @@ void game2(void)
 	text_call("  game 2 start  speednumber game");
 	printf("game 2 start! \n");
 	dot_call(2);
-
+	
     pthread_t thread;
 	int t;
     char *zero ="0000";
@@ -122,7 +122,7 @@ void game2(void)
                         char *str;
                         str = (char*)malloc(sizeof(char)*100);
                         fgets(str,100,f);
-                        answer = str;
+                        strcpy(answer,str);
                         fclose(f);
 			break;
                 }
