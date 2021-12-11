@@ -2,8 +2,6 @@
 #include<stdlib.h>
 
 int main(){
-
-    system("cd ~/Modules");
     system("sudo insmod fpga_interface_driver.ko");
 
     system("sudo insmod fpga_fnd_driver.ko");
